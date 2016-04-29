@@ -11,12 +11,12 @@ public class findQuick {
 		
 		// we take the connectivity from user then we did not need that 
 		join(11,73);
-		join(21,73);
+		join(73,21);
 		join(31,21);
 		join(102,54);
 		join(92,82);
 		
-		System.out.println(isconnected(31, 11));
+		System.out.println(isconnected(21, 11));
 		System.out.println(isconnected(102, 11));
 		System.out.println(isconnected(21, 11));
 		
@@ -32,6 +32,12 @@ public class findQuick {
 			}
 		}
 		if(aIndex != -1 && bIndex != -1){
+			//join all comp..
+			for (int i = 0; i < arr.length; i++) {
+				if(connected[i] == connected[aIndex]){
+					connected[i] = connected[bIndex];
+				}
+			}
 			connected[aIndex] = connected[bIndex];
 		} else {
 			System.out.println("One or the both number you have entered is not found in the objects");
