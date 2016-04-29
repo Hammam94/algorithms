@@ -1,14 +1,14 @@
 
-public class queueLinkedList {
+public class queueLinkedList<Item> {
 	private Node firstNode = null;
 	private Node lastNode = null;
 	private int i = 0;
 	private class Node{
-		String item;
+		Item item;
 		Node next;
 	}
 	
-	public void enqueue(String element){
+	public void enqueue(Item element){
 		Node node = new Node();
 		if(i == 0){
 			firstNode.item = element;
@@ -20,8 +20,8 @@ public class queueLinkedList {
 		}
 	}
 	
-	public String dequeue(){
-		String item = firstNode.item;
+	public Item dequeue(){
+		Item item = firstNode.item;
 		firstNode = firstNode.next;
 		return item;
 	}

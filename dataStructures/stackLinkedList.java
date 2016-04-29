@@ -1,8 +1,8 @@
-public class stackLinkedList {
+public class stackLinkedList<Item> {
 	
 	private Node first = null;
 	private class Node {
-		String item;
+		Item item;
 		Node next;
 	}
 	
@@ -10,15 +10,15 @@ public class stackLinkedList {
 		return first == null;
 	}
 	
-	public void push(String element){
+	public void push(Item element){
 		Node oldNode = first;
 		first = new Node();
 		first.item = element;
 		first.next = oldNode;		
 	}
 	
-	public String pop(){
-		String item = first.item;
+	public Item pop(){
+		Item item = first.item;
 		first = first.next;
 		return item;
 	}
